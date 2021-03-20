@@ -31,6 +31,8 @@ class NeoPixel(Base):
                 pixel_order = "".join(order_list)
         byteorder=pixel_order
         
+        bpp, byteorder_tuple, has_white, dotstar_mode = self._parse_byteorder(byteorder)
+        
         self.auto_write = False
 
         effective_bpp = 4 if dotstar_mode else bpp
@@ -76,8 +78,6 @@ class NeoPixel(Base):
         self.brightness = brightness
 
         self.auto_write = auto_write
-
-        bpp, byteorder_tuple, has_white, dotstar_mode = self._parse_byteorder(byteorder)
 
 
     @staticmethod
