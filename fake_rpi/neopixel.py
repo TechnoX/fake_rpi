@@ -30,7 +30,9 @@ class NeoPixel(Base):
                 order_list = [RGBW[order] for order in pixel_order]
                 pixel_order = "".join(order_list)
         byteorder=pixel_order
-        
+
+        header=None
+        trailer=None
         bpp, byteorder_tuple, has_white, dotstar_mode = self._parse_byteorder(byteorder)
         
         self.auto_write = False
