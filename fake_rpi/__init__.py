@@ -11,6 +11,7 @@ from .Adafruit import LSM303
 from .wrappers import printf
 from .wrappers import toggle_print
 from . import picamera
+from . import neopixel
 
 try:
     from importlib.metadata import version # type: ignore
